@@ -1,0 +1,73 @@
+
+<style>
+.btn-search{
+  background-color:#fe424d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding:0.3rem 1.75rem 0.3rem 1.75rem;
+  opacity:1
+}
+.btn-search:hover{
+  opacity:0.8;
+}
+
+.btn-search i{
+display: inline;
+margin-right: 0.5rem;
+}
+.input{
+  border-radius: 20px;
+  padding: 0.3rem 1.75rem 0.3rem 1.75rem;
+
+}
+</style>
+
+
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-solid fa-compass"></i> 
+    </a>
+
+    <!-- Toggle button-->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+      <!-- Left side -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings">Explore</a>
+        </li>
+      </ul>
+
+      <!-- Center (Search Box) -->
+      <form class="d-flex mx-auto" role="search" style="max-width: 400px; width: 100%;">
+        <input class="form-control input me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn-search btn-outline-success" type="submit"><i class="fas fa-search"></i>Search</button>
+      </form>
+  
+
+      <!-- Right side -->
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        </li>
+
+        <% if (typeof currUser === 'undefined' || !currUser) { %>
+          <li class="nav-item"><a class="nav-link" href="/signup"><b>Sign up</b></a></li>
+          <li class="nav-item"><a class="nav-link" href="/login"><b>Log in</b></a></li>
+        <% } else{%>
+
+        
+          <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
