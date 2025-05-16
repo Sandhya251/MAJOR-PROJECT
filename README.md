@@ -1,57 +1,106 @@
-Wanderlust is a simplified, full-stack web application inspired by Airbnb. It demonstrates core functionalities such as listing properties, user authentication, and basic booking features. Built as a major project to showcase web development skills, Wanderlust offers a clean and responsive interface for users to explore and post rental properties.
+# 🏡 Wanderlust - A Mini Airbnb Clone
+Wanderlust is a simplified, full-stack web application inspired by Airbnb, designed for users to explore, create, and manage property rental listings. It demonstrates core functionalities such as CRUD functionality, listing properties, cloud-based image uploads,user authentication, and basic booking features. Built as a major project to showcase web development skills, Wanderlust offers a clean and responsive interface for users to explore and post rental properties.
 
-This project is not a full clone of Airbnb, but a focused replica that captures the essence of the platform with essential features.
+> 🚧 **Project Status:** Currently under development. More features are being added iteratively.
 
-🌟 Features
-🔐 User Authentication
-Sign up, login, and manage user sessions securely.
+## 📸 Demo
 
-🏘️ Add & Manage Listings
-Users can create, edit, and delete property listings with details like name, price, description, and location.
+> Live demo link coming soon after deployment via [Render](https://render.com).
 
-📅 Simple Booking Logic
-Basic functionality for users to book a property (without payment processing or date conflict checks).
+---
 
-💬 Leave Reviews (Optional)
-A simple review system for users to comment on listings.
+## ✨ Features
 
-📱 Responsive UI
-Mobile-friendly pages using EJS templating and CSS.
+- ✅ Browse all listings
+- ✅ Add a new property listing
+- ✅ Edit and delete own listings
+- ✅ View individual listing details
+- ✅ Upload images (Cloudinary)
+- ✅ Responsive design (Bootstrap 5)
+- ✅ User authentication (register/login/logout)
+- ⏳ Authorization for listing actions *(in progress)*
+- ⏳ Review system *(planned)*
+- ⏳ Map integration *(planned)*
 
-🛠 Tech Stack
-Frontend: HTML, CSS, JavaScript, EJS (Embedded JavaScript Templates)
+--------------------------------
 
-Backend: Node.js, Express.js
+## 🛠️ Tech Stack
 
-Database: MongoDB + Mongoose
+| Layer         | Technologies Used                              |
+|---------------|-------------------------------------------------|
+| Frontend      | EJS, HTML5, Bootstrap 5                         |
+| Backend       | Node.js, Express.js                            |
+| Database      | MongoDB, Mongoose                              |
+| Authentication| Passport.js, express-session                   |
+| File Uploads  | Cloudinary, multer-storage-cloudinary          |
+| Hosting       | Render                                          |
+| Templating    | EJS-Mate                                       |
 
-Authentication: Passport.js or custom middleware
+---------------------------------
 
-Maps: MapTiler / Mapbox (if used)
+## 🗂️ Folder Structure
+major-project/
+│
+├── models/ # MongoDB models
+├── routes/ # Express routes
+├── views/ # EJS templates
+│ ├── listings/
+│ └── users/
+├── public/ # Static assets
+├── middleware/ # Auth middleware
+├── utils/ # Utility config (e.g., Cloudinary)
+├── app.js # Main application entry point
+├── package.json # Dependencies and scripts
+└── .env # Environment variables
 
-Templating: EJS
+---------------------------------
 
-Deployment: Localhost (optionally deploy via Render)
+🧩 Current Progress
+Module	Status	Notes
+Listings CRUD	✅ Complete	All operations implemented
+Auth	✅ Complete	Register/Login/Logout flows
+Image Upload	✅ Complete	Cloudinary + multer integration
+Authorization	🟡 Ongoing	Only owners can edit/delete listings
+Reviews	⏳ Planned	Rating system to be added
+Maps	⏳ Planned	MapTiler integration planned
 
-🎯 Project Purpose
-This project is built to demonstrate:
+---------------------------------
 
-RESTful routing and CRUD operations
+📌 To-Do
+ Review and rating system
 
-MVC architecture in a Node.js environment
+ Authorization for sensitive routes
 
-MongoDB data modeling
+ Pagination and filters
 
-User authentication flows
+ Search functionality
 
-Server-side rendering with EJS
+ Dashboard for users
 
-Practical use of external APIs (if mapping is used)
+ Error handling improvements
 
-## 📦 Getting Started
+---------------------------------
+
+## ⚙️ Getting Started
+
+### ✅ Prerequisites
+
+- Node.js & npm installed
+- MongoDB (local or Atlas)
+- Cloudinary account
+
+### 📦 Installation
+
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/Sandhya251/MAJOR-PROJECT.git
 cd MAJOR-PROJECT
+
 npm install
 npm start
+Create a .env file in the root.
+
+
+
+
