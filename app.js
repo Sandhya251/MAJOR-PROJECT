@@ -97,7 +97,8 @@ app.use((req,res, next)=>{
     next();
 })
 
-
+//This handles homepage and passes allListings to EJS
+app.get("/", listingController.index);
 app.use("/listings",listingRouter);      //for REST apis or routes
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
