@@ -71,8 +71,11 @@
        </div>
     </div>
     
+
+
+
     <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-3">
-         <%  for (listing of allListings){ %>
+         <%  for (let listing of allListings){ %>
            <a href="/listings/<%= listing._id %>" class="card-link"> 
             <div class="card" >
                 <img src="<%= listing.image.url %>" class="card-img-top" alt="fallback image not loading" style="height: 20rem;">
@@ -103,7 +106,6 @@
         }
       })
   </script>
-
 
     
 </body>
