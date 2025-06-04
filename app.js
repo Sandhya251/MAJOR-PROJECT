@@ -102,9 +102,7 @@ app.use("/listings",listingRouter);      //for REST apis or routes
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
 
-app.use('/', (req, res) => {
-  res.render("./listings/index.ejs"); // or res.send('Welcome')
-});
+
 
 //any other random route or pageerror
 app.all("*",(req,res,next)=> {
