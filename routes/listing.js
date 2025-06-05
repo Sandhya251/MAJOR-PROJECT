@@ -15,40 +15,44 @@ const upload=multer({ storage})
 
 //index route
 router
-.route("/")
-.get( wrapAsync(listingController.index))
-.post(isLoggedIn, 
-  upload.single("listing[image]"),
-  validateListing,
-  wrapAsync(listingController.createListing));
+  .route("/")
+  .get(wrapAsync(listingController.index)) // Show all listings
+  .post(
+    isLoggedIn,                            // Must be logged in
+    upload.single("listing[image]"),       // Upload the image
+    validateListing,                       // Validate form data
+    wrapAsync(listingController.createListing) // Save new listing
+  );
 
-
- 
 
 
 //serves the form for new listsing
-   router.get("/new",isLoggedIn, listingController.renderNewForm);
-
-
-    //show route individual listing
-      router
-      .route("/:id")
-      .get( wrapAsync(listingController.showListing))
-      .put(isLoggedIn, isOwner,   upload.single("listing[image]"), validateListing, wrapAsync(listingController.updateListing))   //after submission of edit form
-      .delete(isLoggedIn, isOwner, wrapAsync(listingController.destroyListing))  //delete any listing
+router.get("/new",isLoggedIn, listingController.renderNewForm);
 
 
 
-    //edit any listing after clicking on edit serves the form
-     router.get("/:id/edit",isLoggedIn,isOwner, wrapAsync(listingController.renderEditForm))
-     
-    
-    
-   
-   
-    
-    
+//show route individual listing
+router
+  .route("/:id")
+  .get(wrapAsync(listingController.showListing)) // Show a specific listing
+  .put(
+    isLoggedIn,
+    isOwner,                              // Only owner can edit
+    upload.single("listing[image]"),     // Handle image upload
+    validateListing,                     // Validate form data
+    wrapAsync(listingController.updateListing) // Update in DB
+  )
+  .delete(
+    isLoggedIn,
+    isOwner,                              // Only owner can delete
+    wrapAsync(listingController.destroyListing) // Remove from DB
+  );
   
-   
+
+
+
+//edit any listing after clicking on edit serves the form
+router.get("/:id/edit",isLoggedIn,isOwner, wrapAsync(listingController.renderEditForm))
+  
     
-    module.exports=router;
+module.exports=router;

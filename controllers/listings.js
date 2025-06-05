@@ -19,10 +19,12 @@ module.exports.renderNewForm= (req,res)=> {
               {
                  path: "reviews",
                  populate: {
-                     path: "author" // if you're storing the user who made the review
+                     path: "author" 
                  }
              }
             );
+            console.log("Owner:", listing.owner);
+
             if(!listing){
               req.flash("error","listing you requested for does not exist");
               res.redirect("/listings")
